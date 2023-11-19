@@ -15,12 +15,16 @@
     echo $_SESSION['apellido'];
     echo $_SESSION['mascota'];
     echo $_SESSION['amigos'][1].'<br>';
-
+    //Instancio un objeto
     $aficionesRecuperadas = unserialize($_SESSION['aficiones']);
     echo $aficionesRecuperadas->deporte . '<br>';
-
-    $usuarioRecuperado = unserialize($_SESSION['usuario']);
-    echo $usuarioRecuperado->presentarse();
+    //Instancio una clase
+    $usuarioRecuperado = unserialize($_SESSION['alumno']);
+    $usuarioRecuperado->presentarse("Dolores");
+    $usuarioRecuperado->presentarse("María");
+    //Vuelvo a instanciar la clase
+    $profesorRecuperado = unserialize($_SESSION['profesor']);
+    $profesorRecuperado ->presentarse("Clotilda");
     ?>
 </body>
 </html>

@@ -30,13 +30,16 @@ class Usuario {
         $this->edad = $edad;
     }
 
-    public function presentarse(){
-        echo "Hola, soy {$this->nombre} y tengo {$this->edad} años.";
+    public function presentarse($madre){
+        echo "Hola, soy {$this->nombre} y tengo {$this->edad} años. Mi madre se llama {$madre}. <br>";
     }
 }
 
-$usuario = new Usuario("Alex", 32);
-$_SESSION['$usuario']= serialize($usuario);
+$alumno = new Usuario("Alex", 32);
+$_SESSION['alumno']= serialize($alumno);
+
+$profesor = new Usuario ("Paco", 55);
+$_SESSION['profesor']= serialize($profesor);
 
 
 
